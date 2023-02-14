@@ -1,11 +1,27 @@
-import time from '../images/time.svg'
-import like from '../images/like.svg'
-import medal from '../images/medal.svg'
-import pen from '../images/pen.svg'
+import React from 'react'
+import time from '/images/time.svg'
+import like from '/images/like.svg'
+import medal from '/images/medal.svg'
+import pen from '/images/pen.svg'
 import Card from '../components/card'
 import { Link } from 'react-router-dom'
+import tablesData from '../tablesData.json'
+import '/public/styles/home.scss'
+
 
 export default function Home() {
+  const [tables, setTables] = React.useState([])
+
+  const table = tablesData.slice(0, 4).map(item => (
+    <Card
+      key={item.id}
+      name={item.name}
+      price={item.price}
+      image={item.image}
+      description={item.description}
+    />
+  ))
+
   return (
     <>
       <div className="main">
@@ -27,10 +43,7 @@ export default function Home() {
         <div className="container">
             <h2 className="shop--heading main-heading">Лучшее только у нас</h2>
             <div className="shop--list">
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                {table}
             </div>
             <Link to={'/shop'}><button className="shop--button button button--accent">Посмотреть все товары</button></Link>
         </div>

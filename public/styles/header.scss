@@ -1,0 +1,29 @@
+.header {
+    background-color: #3E6187;
+    max-height: fit-content;
+    color: white;
+    &--body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &--menu {
+        display: flex;
+    }
+    &--utils {
+        display: flex;
+        align-items: center;
+    }
+    &--languageSelector {
+        margin-right: 50px;
+        text-transform: capitalize;
+    }
+    .menu {
+        &--item {
+            margin-right: 50px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+}

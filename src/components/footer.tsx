@@ -1,7 +1,8 @@
 import React from 'react'
-import mastercard from '../images/mastercard.png'
-import visa from '../images/visa.png'
+import mastercard from '../../public/images/mastercard.png'
+import visa from '../../public/images/visa.png'
 import { Link } from 'react-router-dom'
+import '/public/styles/footer.scss'
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
             <li className="menu--item"><Link to={'/'} className="menu--link">Главная</Link></li>
             <li className="menu--item"><Link to={'/shop'} className="menu--link">Товары</Link></li>
             <li className="menu--item"><Link to={'/about'} className="menu--link">О нас</Link></li>
-            <li className="menu--item"><Link to={'/'} className="menu--link">Контакты</Link></li>
+            <li className="menu--item"><Link to={'/contact'} className="menu--link">Контакты</Link></li>
           </ul>
           <div className="footer--payment">
             <div className="footer--heading">Принимаем к оплате:</div>

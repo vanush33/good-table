@@ -21,6 +21,7 @@ a {
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    color: #2E2E2E;
 }
 .content {
     flex: 1 1 auto;
@@ -31,106 +32,9 @@ a {
     font-size: 48px;
     letter-spacing: 0.02em;
 }
-.header {
-    background-color: #3E6187;
-    max-height: fit-content;
-    color: white;
-    &--body {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    &--menu {
-        display: flex;
-    }
-    &--utils {
-        display: flex;
-        align-items: center;
-    }
-    &--languageSelector {
-        margin-right: 50px;
-        text-transform: capitalize;
-    }
-    .menu {
-        &--item {
-            margin-right: 50px;
-            &:last-child {
-                margin: 0;
-            }
-        }
-    }
-}
-.footer {
-    background-color: #3E6187;
-    padding: 24px 0px;
-    color: white;
-    font-weight: 500;
-    font-size: 16px;
-    &--body {
-        display: flex;
-        justify-content: space-between;
-    }
-    &--copy {
-        text-align: center;
-        margin-top: 16px;
-    }
-    &--payment {
-        img {
-            margin-right: 30px;
-        }
-    }
-    &--heading {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-    &--number {
-        display: block;
-        margin-bottom: 16px;
-        font-family: 'Roboto';
-        font-weight: 300;
-        font-size: 16px;
-    }
-    .menu {
-        &--item {
-            margin-bottom: 16px;
-            &:last-child {
-                margin: 0;
-            }
-        }
-    }
-}
-.main {
-    padding: 100px 0px;
-    background-image: url('/src/images/main.png');
-    background-position: right;
-    background-color: #3E6187;
-    background-repeat: no-repeat;
-    color: white;
-    &--heading {
-        font-family: 'Book Antiqua';
-        font-weight: 400;
-        font-size: 96px;
-        letter-spacing: 0.02em;
-        margin-bottom: 20px;
-    }
-    &--subHeading {
-        font-weight: 500;
-        font-size: 20px;
-        margin-bottom: 36px;
-    }
-    &--list {
-        margin-bottom: 40px;
-    }
-    &--item {
-        margin-bottom: 16px;
-        display: flex;
-        align-items: center;
-        img {
-            width: 20px;
-            margin-right: 8px;
-        }
-    }
-}
+
+
+
 .button {
     padding: 10px 45px;
     border: none;
@@ -143,64 +47,14 @@ a {
         background-color: #FF8B36;
         color: white;
     }
-}
-.shop {
-    padding: 100px 0px;
-    text-align: center;
-    &--heading {
-        margin-bottom: 48px;
-    }
-    &--list {
-        margin-bottom: 45px;
-        display: grid;
-        grid-template-columns: repeat(4, 375px);
-        grid-gap: 20px;
+    &--secondary {
+        background-color: transparent;
+        border: 1px solid white;
     }
 }
-.card {
-    width: 375px;
-    &--image {
-        width: 100%;
-        height: 323px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.1);
-        img {
-            max-width: 90%;
-        }
-    }
-    &--info {
-        padding: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    &--name {
-        font-weight: 700;
-        font-size: 16px;
-        text-transform: capitalize;
-    }
-    &--price {
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 20px;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-    }
-}
-.product {
-    padding: 60px 0px;
-    &--heading {
-        margin-bottom: 48px;
-        text-align: center;
-    }
-    &--list {
-        display: grid;
-        grid-template-columns: repeat(4, auto);
-        grid-row-gap: 30px;
-    }
-}
+
+
+
 .heading {
     font-family: 'Book Antiqua';
     font-weight: 400;
@@ -318,5 +172,155 @@ a {
     img {
         
         display: block;
+    }
+}
+.feedback {
+    padding: 100px 0px;
+    &--heading {
+        font-family: 'Book Antiqua';
+        font-weight: 400;
+        font-size: 48px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        margin-bottom: 64px;
+    }
+    &--form {
+        width: 570px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: auto;
+        input, textarea {
+            margin-bottom: 24px;
+            padding: 12px 16px;
+            background-color: #F0F0F0;
+            border: none;
+            font-family: 'Raleway';
+            font-weight: 400;
+            font-size: 14px;
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            height: 165px;
+            resize: none;
+        }
+    }
+}
+.visit {
+    padding: 40px 0px;
+    background: linear-gradient(83.48deg, #3E6187 1.92%, rgba(62, 97, 135, 0.720998) 88.26%, rgba(62, 97, 135, 0.45) 95.56%, rgba(62, 97, 135, 0.2) 99.28%);
+    color: white;
+    &--heading {
+        font-family: 'Book Antiqua';
+        font-weight: 400;
+        font-size: 48px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        margin-bottom: 64px;
+    }
+    &--body {
+        display: flex;
+        justify-content: space-around;
+    }
+    &--city_name {
+        font-family: 'Raleway';
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 32px;
+    }
+    p {
+        font-family: 'Raleway';
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+    button {
+        margin-top: 24px;
+    }
+}
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    padding: 104px 0px;
+}
+.product {
+    padding: 100px 0px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+    font-size: 20px;
+    &--image {
+        width: 400px;
+        aspect-ratio: 1/1;
+        box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        img {
+            width: 100%;
+        }
+    }
+    &--desc {
+        width: 400px;
+        aspect-ratio: 1/1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &--name {
+        font-family: 'Book Antiqua';
+        font-weight: 400;
+        font-size: 48px;
+        letter-spacing: 0.02em;
+    }
+    &--description {
+        font-weight: 400;
+        font-size: 16px;
+    }
+    &--sum {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: 0.02em;
+    }
+    input {
+        width: 70px;
+        &:focus {
+            outline: none;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    span {
+        font-family: 'Roboto';
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+}
+.amount {
+    width: 25px;
+    border: none;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #c4c4c4;
+    &:first-child {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+    &:last-child {
+        margin-left: 20px;
     }
 }

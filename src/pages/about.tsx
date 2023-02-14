@@ -1,10 +1,10 @@
-import image1 from '../images/about1.png'
-import image2 from '../images/about2.png'
-import image3 from '../images/about3.png'
-import image4 from '../images/about4.png'
-import clock from '../images/clock.svg'
-import list from '../images/list.png'
-import hat from '../images/hat.png'
+import image1 from '../../public/images/about1.png'
+import image2 from '../../public/images/about2.png'
+import image3 from '../../public/images/about3.png'
+import image4 from '../../public/images/about4.png'
+import clock from '../../public/images/clock.svg'
+import list from '../../public/images/list.png'
+import hat from '../../public/images/hat.png'
 
 export default function About() {
   return (

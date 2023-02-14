@@ -1,0 +1,45 @@
+.main {
+    padding: 100px 0px;
+    background-image: url('/images/main.png');
+    background-position: right;
+    background-color: #3E6187;
+    background-repeat: no-repeat;
+    color: white;
+    &--heading {
+        font-family: 'Book Antiqua';
+        font-weight: 400;
+        font-size: 96px;
+        letter-spacing: 0.02em;
+        margin-bottom: 20px;
+    }
+    &--subHeading {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 36px;
+    }
+    &--list {
+        margin-bottom: 40px;
+    }
+    &--item {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        img {
+            width: 20px;
+            margin-right: 8px;
+        }
+    }
+}
+.shop {
+    padding: 100px 0px;
+    text-align: center;
+    &--heading {
+        margin-bottom: 48px;
+    }
+    &--list {
+        margin-bottom: 45px;
+        display: grid;
+        grid-template-columns: repeat(4, 375px);
+        grid-gap: 20px;
+    }
+}

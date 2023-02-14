@@ -1,7 +1,8 @@
 import React from 'react'
-import Logo from '../images/logo.png'
-import cart from '../images/cart.png'
+import Logo from '/public/images/logo.png'
+import cart from '/public/images/cart.png'
 import { Link } from 'react-router-dom'
+import '/public/styles/header.scss'
 
 export default function Header() {
   return (
@@ -13,7 +14,7 @@ export default function Header() {
                 <li className="menu--item"><Link to={'/'} className="menu--link">Главная</Link></li>
                 <li className="menu--item"><Link to={'/shop'} className="menu--link">Товары</Link></li>
                 <li className="menu--item"><Link to={'/about'} className="menu--link">О нас</Link></li>
-                <li className="menu--item"><Link to={'/'} className="menu--link">Контакты</Link></li>
+                <li className="menu--item"><Link to={'/contact'} className="menu--link">Контакты</Link></li>
             </ul>
             <div className="header--utils">
                 <div className="header--languageSelector">ru</div>
