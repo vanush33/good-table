@@ -15,6 +15,7 @@ export default function Home() {
   const table = tablesData.slice(0, 4).map(item => (
     <Card
       key={item.id}
+      id={item.id - 1}
       name={item.name}
       price={item.price}
       image={item.image}
@@ -35,7 +36,7 @@ export default function Home() {
                     <li className="main--item"><img src={medal}/>Гарантия производителя: 5 лет</li>
                     <li className="main--item"><img src={pen}/>Отчёт по всем этапам работы</li>
                 </ul>
-                <button className="main--button button button--accent">В каталог</button>
+                <Link to={'/shop'}><button className="main--button button button--accent">В каталог</button></Link>
             </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import gallery1 from '../../public/images/gallery1.png'
 import gallery2 from '../../public/images/gallery2.png'
 import gallery3 from '../../public/images/gallery3.png'
+import '/public/styles/contact.scss'
 
 export default function Contact() {
   return (

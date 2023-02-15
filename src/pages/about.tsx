@@ -5,6 +5,8 @@ import image4 from '../../public/images/about4.png'
 import clock from '../../public/images/clock.svg'
 import list from '../../public/images/list.png'
 import hat from '../../public/images/hat.png'
+import '/public/styles/about.scss'
+import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
@@ -49,7 +51,7 @@ export default function About() {
                 <div className="places">
                     <div className="places--heading heading">Студии</div>
                     <p>Наша компания владеет 3 филиалами: в Кишинёв, Киеве и Бухаресте. В любой рабочий день недели вы сможете посетить нашу студию.</p>
-                    <button className="button button--accent">Связаться с нами</button>
+                    <Link to={'/contact'}><button className="button button--accent">Связаться с нами</button></Link>
                     <img src={image4}/>
                 </div>
             </div>

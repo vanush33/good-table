@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../components/card'
 import tablesData from '../tablesData.json'
+import '/public/styles/shop.scss'
 
 export default function Shop() {
   const [tables, setTables] = React.useState([])
@@ -8,6 +9,7 @@ export default function Shop() {
   const table = tablesData.map(item => (
     <Card
       key={item.id}
+      id={item.id - 1}
       name={item.name}
       price={item.price}
       image={item.image}
