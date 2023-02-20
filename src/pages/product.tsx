@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import '/public/styles/product.scss'
+import './styles/product.scss'
 import tablesData from '../tablesData.json'
 import { useParams } from 'react-router-dom'
-import Page404 from '../components/page404'
+import Page404 from './page404'
 
 interface ProductPageParams
  {
@@ -10,13 +10,24 @@ interface ProductPageParams
   [key:string]: string
 }
 
+interface CartItemParams {
+  id: number,
+  name: string,
+  image: string,
+  description?: string,
+  price: number
+  amount: number
+}
+
 export default function Product() {
-    const [amount, setAmount] = React.useState(0)
+    const [amount, setAmount] = React.useState(1)
+    const [cartItems, setCartItems] = React.useState<CartItemParams[]>([])
     const {id} = useParams<ProductPageParams>()
     const table = useMemo(() => {
       if (id && tablesData[parseInt(id)]) {
         const id_ = parseInt(id)
         return {
+          id: tablesData[id_].id,
           name: tablesData[id_].name,
           image: tablesData[id_].image,
           description: tablesData[id_].description,
@@ -36,6 +47,26 @@ export default function Product() {
     function subtract() {
         amount > 0 && setAmount(prevAmount => prevAmount - 1)
     }
+    
+    const item: CartItemParams = {
+      id: table.id,
+      name: table.name,
+      price: table.price,
+      image: table.image,
+      amount: amount
+    }
+
+    function addToCart(id: number, amount: number) {
+      const cartItem = cartItems.find(item => item.id === id)
+      if (cartItem) {
+        setCartItems(prevItems => prevItems.map(el => el.id === id ? {...el, amount: el.amount + amount} : el))
+      }
+      else {
+        setCartItems([...cartItems, item])
+      }
+    }
+    console.log(cartItems)
+
   return (
     <>
       <div className="container">
@@ -56,7 +87,7 @@ export default function Product() {
                 </div>
                 <div className="product--sum">
                     <div className="product--total">{table.price * amount} mdl</div>
-                    <button className="button button--accent">В корзину</button>
+                    <button className="button button--accent" onClick={() => addToCart(item.id, item.amount)}>В корзину</button>
                 </div>
             </div>
         </div>

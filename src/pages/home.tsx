@@ -6,7 +6,7 @@ import pen from '/images/pen.svg'
 import Card from '../components/card'
 import { Link } from 'react-router-dom'
 import tablesData from '../tablesData.json'
-import '/public/styles/home.scss'
+import './styles/home.scss'
 
 
 export default function Home() {

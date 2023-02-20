@@ -1,8 +1,12 @@
 import React from 'react'
-import Logo from '/public/images/logo.png'
-import cart from '/public/images/cart.png'
+import Logo from '/images/logo.png'
+import cart from '/images/cart.png'
 import { Link } from 'react-router-dom'
-import '/public/styles/header.scss'
+import '../pages/styles/header.scss'
+import Cart from './Cart'
+
+
+
 
 export default function Header() {
   return (
@@ -22,6 +26,7 @@ export default function Header() {
             </div>
         </div>
       </div>
+      <Cart/>
     </div>
   )
 }

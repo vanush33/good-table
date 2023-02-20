@@ -1,8 +1,8 @@
 import React from 'react'
-import mastercard from '../../public/images/mastercard.png'
-import visa from '../../public/images/visa.png'
+import mastercard from '/images/mastercard.png'
+import visa from '/images/visa.png'
 import { Link } from 'react-router-dom'
-import '/public/styles/footer.scss'
+import '../pages/styles/footer.scss'
 
 export default function Footer() {
   return (

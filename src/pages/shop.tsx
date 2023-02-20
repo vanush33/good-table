@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../components/card'
 import tablesData from '../tablesData.json'
-import '/public/styles/shop.scss'
+import './styles/shop.scss'
 
 export default function Shop() {
   const [tables, setTables] = React.useState([])
