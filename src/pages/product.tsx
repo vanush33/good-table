@@ -1,8 +1,9 @@
-import React, { useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import './styles/product.scss'
 import tablesData from '../tablesData.json'
 import { useParams } from 'react-router-dom'
 import Page404 from './page404'
+import { CartContext } from '../components/Cart/CartContext'
 
 interface ProductPageParams
  {
@@ -10,19 +11,19 @@ interface ProductPageParams
   [key:string]: string
 }
 
-interface CartItemParams {
-  id: number,
-  name: string,
-  image: string,
-  description?: string,
+export interface CartItemParams {
+  id: number
+  name: string
+  image: string
+  description?: string
   price: number
   amount: number
 }
 
 export default function Product() {
     const [amount, setAmount] = React.useState(1)
-    const [cartItems, setCartItems] = React.useState<CartItemParams[]>([])
     const {id} = useParams<ProductPageParams>()
+    const {setCartItems} = useContext(CartContext)
     const table = useMemo(() => {
       if (id && tablesData[parseInt(id)]) {
         const id_ = parseInt(id)
@@ -56,17 +57,6 @@ export default function Product() {
       amount: amount
     }
 
-    function addToCart(id: number, amount: number) {
-      const cartItem = cartItems.find(item => item.id === id)
-      if (cartItem) {
-        setCartItems(prevItems => prevItems.map(el => el.id === id ? {...el, amount: el.amount + amount} : el))
-      }
-      else {
-        setCartItems([...cartItems, item])
-      }
-    }
-    console.log(cartItems)
-
   return (
     <>
       <div className="container">
@@ -87,7 +77,7 @@ export default function Product() {
                 </div>
                 <div className="product--sum">
                     <div className="product--total">{table.price * amount} mdl</div>
-                    <button className="button button--accent" onClick={() => addToCart(item.id, item.amount)}>В корзину</button>
+                    <button className="button button--accent" onClick={() => setCartItems(item.id, item.amount, item)}>В корзину</button>
                 </div>
             </div>
         </div>

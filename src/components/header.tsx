@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '/images/logo.png'
 import cart from '/images/cart.png'
 import { Link } from 'react-router-dom'
 import '../pages/styles/header.scss'
-import Cart from './Cart'
-
-
-
+import Cart from './Cart/Cart'
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+  function toggleCart() {
+    setIsOpen(prevState => !prevState)
+  }
   return (
     <div className='header'>
       <div className="container">
@@ -22,11 +23,11 @@ export default function Header() {
             </ul>
             <div className="header--utils">
                 <div className="header--languageSelector">ru</div>
-                <div className="header--cart"><img src={cart}/></div>
+                <div className="header--cart" onClick={toggleCart}><img src={cart}/></div>
             </div>
         </div>
       </div>
-      <Cart/>
+      {isOpen && <Cart />}
     </div>
   )
 }
