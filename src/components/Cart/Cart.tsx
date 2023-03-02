@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from 'react'
 import CartItem from '../CartItem'
 import '../../pages/styles/cart.scss'
 import { CartContext } from './CartContext'
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
   const {cartItems} = useContext(CartContext)
@@ -26,7 +27,7 @@ export default function Cart() {
         </ul>
         <div className="cart--row">
             <div className="cart--price">{totalPrice} MDL</div>
-            <button className="button button--accent">К оплате</button>
+            <Link to={'/confirmAddress'}><button className="button button--accent">К оплате</button></Link>
         </div>
     </div>
   )

@@ -6,6 +6,9 @@ import Shop from './pages/shop'
 import About from './pages/about'
 import Contact from './pages/contact'
 import Product from './pages/product'
+import { ConfirmAddress } from './pages/ConfirmAddress'
+import { ConfirmData } from './pages/ConfirmData'
+import { ConfirmPayment } from './pages/ConfirmPayment'
 
 function App() {
 
@@ -18,6 +21,9 @@ function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/shop/:id' element={<Product/>}/>
+          <Route path='/confirmAddress' element={<ConfirmAddress/>}/>
+          <Route path='/confirmData' element={<ConfirmData/>}/>
+          <Route path='/confirmPayment' element={<ConfirmPayment/>}/>
         </Route>
       </Routes>
     </>

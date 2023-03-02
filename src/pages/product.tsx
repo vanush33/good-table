@@ -46,7 +46,7 @@ export default function Product() {
     }
 
     function subtract() {
-        amount > 0 && setAmount(prevAmount => prevAmount - 1)
+        amount > 1 && setAmount(prevAmount => prevAmount - 1)
     }
     
     const item: CartItemParams = {
@@ -65,8 +65,7 @@ export default function Product() {
             <div className="product--desc">
                 <div className="product--name">{table.name}</div>
                 <div className="product--description">{table.description}</div>
-                <div className="product--material">Выберите материал: ДСП МДФ</div>
-                <div className="product--color">Цвет: </div>
+                <div className="product--color">Цвет: <input type="color" /></div>
                 <div className="product--width">Ширина: <input type="number" /> см</div>
                 <div className="product--height">Длина: <input type="number" /> см</div>
                 <div className="product--amount">
