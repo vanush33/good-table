@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/confirmPayment.scss'
 
 export const ConfirmPayment = () => {
+    //tracking payment method
     const [isCash, setIsCash] = useState(false)
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import '../pages/styles/cartItem.scss'
 import { CartContext } from './Cart/CartContext'
 import { CartItemParams } from '../pages/product'
@@ -11,8 +11,7 @@ interface IOwnProps {
   item: CartItemParams
 }
 
-export default function CartItem({id, name, image, amount, item}:IOwnProps) {
-  const {setCartItems} = useContext(CartContext)
+export const CartItem = ({id, name, image, amount, item}:IOwnProps) => {
   const {removeCartItem} = useContext(CartContext)
   return (
     <div className='cart-item'>

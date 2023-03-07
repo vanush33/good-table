@@ -1,11 +1,7 @@
-import React, { EventHandler } from 'react'
 import './styles/ConfirmAddress.scss'
 import { Link } from 'react-router-dom'
 
 export const ConfirmAddress = () => {
-  const submitForm = (event: Event) => {
-    event.preventDefault()
-  }
   return (
     <>
       <div className="container">

@@ -1,8 +1,8 @@
-import React, { useContext, useMemo } from 'react'
+import { useContext, useMemo, useState } from 'react'
 import './styles/product.scss'
 import tablesData from '../tablesData.json'
 import { useParams } from 'react-router-dom'
-import Page404 from './page404'
+import { Page404 } from './page404'
 import { CartContext } from '../components/Cart/CartContext'
 
 interface ProductPageParams
@@ -20,10 +20,12 @@ export interface CartItemParams {
   amount: number
 }
 
-export default function Product() {
-    const [amount, setAmount] = React.useState(1)
-    const {id} = useParams<ProductPageParams>()
-    const {setCartItems} = useContext(CartContext)
+export const Product = () => {
+  //rendering product page
+    const [amount, setAmount] = useState(1)
+    const { id } = useParams<ProductPageParams>()
+    const { setCartItems } = useContext(CartContext)
+    //finding clicked product
     const table = useMemo(() => {
       if (id && tablesData[parseInt(id)]) {
         const id_ = parseInt(id)
@@ -36,15 +38,15 @@ export default function Product() {
         }
       }
     },[id])
-
+    //if product doesn't exist
     if (!table) {
       return <Page404 />
     }
-
+    //add product amount
     function add() {
         setAmount(prevAmount => prevAmount + 1)
     }
-
+    //subtract product amount
     function subtract() {
         amount > 1 && setAmount(prevAmount => prevAmount - 1)
     }
@@ -65,7 +67,6 @@ export default function Product() {
             <div className="product--desc">
                 <div className="product--name">{table.name}</div>
                 <div className="product--description">{table.description}</div>
-                <div className="product--color">Цвет: <input type="color" /></div>
                 <div className="product--width">Ширина: <input type="number" /> см</div>
                 <div className="product--height">Длина: <input type="number" /> см</div>
                 <div className="product--amount">

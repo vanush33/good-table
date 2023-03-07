@@ -1,0 +1,18 @@
+.page {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3E6187;
+    margin-right: 10px;
+    cursor: pointer;
+    &:last-child {
+        margin: 0;
+    }
+}
+.currentPage {
+    border: none;
+    background-color: #3E6187;
+    color: white;
+}

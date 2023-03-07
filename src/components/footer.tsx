@@ -1,10 +1,9 @@
-import React from 'react'
 import mastercard from '/images/mastercard.png'
 import visa from '/images/visa.png'
 import { Link } from 'react-router-dom'
 import '../pages/styles/footer.scss'
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <div className='footer'>
       <div className="container">

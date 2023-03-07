@@ -8,7 +8,7 @@ import hat from '/images/hat.png'
 import './styles/about.scss'
 import { Link } from 'react-router-dom'
 
-export default function About() {
+export const About = () => {
   return (
     <>
         <div className="story">

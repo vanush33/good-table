@@ -6,19 +6,19 @@ interface CardProps {
   price: number
   image: string
   description?: string
+  category: string
 }
-
-const Card = ({id, name, price, image, description}: CardProps) => {
+//rendering product card
+export const Card = ({id, name, price, image}: CardProps) => {
   return (
     <Link to={`/shop/${id}`}>
       <div className='card'>
         <div className="card--image"><img src={image}/></div>
         <div className="card--info">
           <div className="card--name">{name}</div>
-          <div className="card--price">{price}</div>
+          <div className="card--price">{price} mdl</div>
         </div>
       </div>
     </Link>
   )
 }
-export default Card

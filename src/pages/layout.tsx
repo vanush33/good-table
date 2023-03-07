@@ -1,13 +1,13 @@
-import React, { createContext, useState } from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import { useState } from 'react'
+import { Header } from '../components/header'
+import { Footer } from '../components/footer'
 import { Outlet } from 'react-router-dom'
 import { CartContext } from '../components/Cart/CartContext'
 import { CartItemParams } from './product'
 
-export default function Layout() {
+export const Layout = () => {
   const [cartItems, setCartItems] = useState<CartItemParams[]>([])
-
+  //adding item into cart by it's id
   function addToCart(id: number, amount: number, item: CartItemParams) {
     const cartItem = cartItems.find(item => item.id === id)
     if (cartItem) {
@@ -17,9 +17,9 @@ export default function Layout() {
       setCartItems(prevItems => [...prevItems, item])
     }
   }
+  //removing item from cart by it's id
   function removeFromCart(id: number, item: CartItemParams) {
     const cartItem = cartItems.find(item => item.id === id)
-    const itemIndex = cartItems.findIndex(item => item.id === id)
     if (cartItem) {
       setCartItems(prevItems => prevItems.filter(item => item.id !== id))
     }

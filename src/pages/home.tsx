@@ -1,17 +1,15 @@
-import React from 'react'
 import time from '/images/time.svg'
 import like from '/images/like.svg'
 import medal from '/images/medal.svg'
 import pen from '/images/pen.svg'
-import Card from '../components/card'
+import { Card } from '../components/card'
 import { Link } from 'react-router-dom'
 import tablesData from '../tablesData.json'
 import './styles/home.scss'
 
 
-export default function Home() {
-  const [tables, setTables] = React.useState([])
-
+export const Home = () => {
+  //rendering 4 cards to display
   const table = tablesData.slice(0, 4).map(item => (
     <Card
       key={item.id}
@@ -20,6 +18,7 @@ export default function Home() {
       price={item.price}
       image={item.image}
       description={item.description}
+      category={item.category}
     />
   ))
 

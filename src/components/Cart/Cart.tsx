@@ -1,11 +1,13 @@
-import React, { useContext, useMemo } from 'react'
-import CartItem from '../CartItem'
+import { useContext, useMemo } from 'react'
+import { CartItem } from '../CartItem'
 import '../../pages/styles/cart.scss'
 import { CartContext } from './CartContext'
 import { Link } from 'react-router-dom'
 
-export default function Cart() {
+export const Cart = () => {
+  //Using CartContext to get data about cart items
   const {cartItems} = useContext(CartContext)
+  //counting total price for items in cart
   const totalPrice = useMemo(() => {
     let currentPrice = 0
     cartItems.map(item => {
@@ -16,13 +18,16 @@ export default function Cart() {
   return (
     <div className='cart'>
         <ul className="cart--list">
-            { cartItems.length === 0 ? "Корзина пуста" : 
-            cartItems.map(item => 
-              <CartItem
-                key={item.id}
-                {...item}
-                item={item}
-              />)
+            {
+              //rendering cart items
+              cartItems.length === 0 ? "Корзина пуста" : 
+              cartItems.map(item => 
+                <CartItem
+                  key={item.id}
+                  {...item}
+                  item={item}
+                />
+              )
             }
         </ul>
         <div className="cart--row">

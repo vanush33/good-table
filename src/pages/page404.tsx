@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Page404() {
+export const Page404 = () => {
   return (
     <>
       page not found!!!
