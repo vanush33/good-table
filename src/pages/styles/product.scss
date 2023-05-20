@@ -1,6 +1,6 @@
 .product {
     display: grid;
-    //grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, auto);
     padding: 100px 0px;
     grid-gap: 20px;
     font-weight: 500;
@@ -80,5 +80,13 @@
     }
     &:last-child {
         margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

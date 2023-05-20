@@ -28,8 +28,22 @@
     }
     &--cart {
         cursor: pointer;
+        position: relative;
     }
 }
 .menu--link.active{
     color: #FEB681;
+}
+.cartAmount {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 22px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF8B36;
+    border-radius: 50%;
+    font-size: 15px;
 }

@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import Logo from '/images/logo.png'
 import cart from '/images/cart.png'
 import { NavLink } from 'react-router-dom'
 import '../pages/styles/header.scss'
 import { Cart } from './Cart/Cart'
 import { ClickAwayListener } from '@mui/material'
+import { CartContext } from './Cart/CartContext'
 
 export const Header = () => {
   //creating state to track if cart is open
@@ -13,7 +14,7 @@ export const Header = () => {
   function toggleCart() {
     setIsOpen(prevState => !prevState)
   }
-
+  const { cartItems } = useContext(CartContext)
   return (
     <div className='header'>
       <div className="container">
@@ -25,7 +26,7 @@ export const Header = () => {
             <li className="menu--item"><NavLink to={'/about'} className="menu--link">О нас</NavLink></li>
             <li className="menu--item"><NavLink to={'/contact'} className="menu--link">Контакты</NavLink></li>
           </ul>
-          <div className="header--cart" onClick={toggleCart}><img src={cart} /></div>
+          <div className="header--cart" onClick={toggleCart}><div className='cartAmount'>{cartItems.length}</div><img src={cart} /></div>
         </div>
       </div>
       {isOpen && <Cart onClickAway={() => setIsOpen(false)} />}
