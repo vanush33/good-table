@@ -39,7 +39,16 @@
     &--list {
         margin-bottom: 45px;
         display: grid;
-        grid-template-columns: repeat(4, 375px);
+        grid-template-columns: repeat(4, auto);
         grid-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .shop {
+        &--list {
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 20px;
+        }
     }
 }

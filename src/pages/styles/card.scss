@@ -31,3 +31,21 @@
         text-transform: uppercase;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .card {
+        width: 325px;
+        &--image {
+            width: 100%;
+            height: 323px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.1);
+            img {
+                max-width: 90%;
+                max-height: 90%;
+            }
+        }
+    }
+}

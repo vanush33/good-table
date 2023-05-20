@@ -1,7 +1,8 @@
 .product {
+    display: grid;
+    //grid-template-columns: repeat(2, auto);
     padding: 100px 0px;
-    display: flex;
-    justify-content: space-around;
+    grid-gap: 20px;
     font-weight: 500;
     font-size: 20px;
     &--image {

@@ -1,3 +1,4 @@
+import CountrySelect from '../components/CountrySelect'
 import './styles/ConfirmAddress.scss'
 import { Link } from 'react-router-dom'
 
@@ -8,11 +9,12 @@ export const ConfirmAddress = () => {
         <div className="confirmAddress">
           <h2 className="heading main-heading">Адрес доставки</h2>
           <form action="" className='confirmAddress--form'>
-            <select className='confirmAddress--country' placeholder='Страна'>
+            {/* <select className='confirmAddress--country' placeholder='Страна'>
               <option>Молдова</option>
               <option>Румыния</option>
-              <option>Украина</option>
-            </select>
+            <option>Украина</option>
+            </select> */}
+            <CountrySelect />
             <select className='confirmAddress--city'>
               <option>Бухарест</option>
               <option>Киев</option>
@@ -26,8 +28,8 @@ export const ConfirmAddress = () => {
             </select>
             <input type="text" className='confirmAddress--address' placeholder='Адресс' />
             <div className="confirmAddress--buttons">
-                <Link to={'/shop'}><button className="button button--secondary">К покупкам</button></Link>
-                <Link to={'/confirmData'}><button className="button button--accent">Продолжить</button></Link>
+              <Link to={'/shop'}><button className="button button--secondary">К покупкам</button></Link>
+              <Link to={'/confirmData'}><button className="button button--accent">Продолжить</button></Link>
             </div>
           </form>
         </div>

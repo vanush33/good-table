@@ -16,8 +16,8 @@ export const Footer = () => {
           </ul>
           <div className="footer--payment">
             <div className="footer--heading">Принимаем к оплате:</div>
-            <img src={visa}/>
-            <img src={mastercard}/>
+            <img src={visa} />
+            <img src={mastercard} />
           </div>
           <div className="footer--contact">
             <div className="footer--heading">Позвоните нам:</div>
@@ -25,7 +25,7 @@ export const Footer = () => {
             <a href='tel:069 344 253' className="footer--number">069 344 253</a>
           </div>
         </div>
-        <div className="footer--copy">&copy; 2021 Good Table. Все права защищены.</div>
+        <div className="footer--copy">&copy; 2023 Good Table. Все права защищены.</div>
       </div>
     </div>
   )

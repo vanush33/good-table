@@ -1,17 +1,20 @@
 .story {
+    width: 83%;
+    margin: 0 auto;
     padding: 100px 0px;
     &--heading {
         font-size: 46px;
-        margin-bottom: 48px;
+        margin-bottom: 68px;
     }
     &--story {
         display: flex;
         align-items: center;
         p {
-            width: 372px;
+            width: 500px;
             font-weight: 400;
             font-size: 16px;
             margin-left: 200px;
+            line-height: 160%;
         }
     }
 }
@@ -68,12 +71,15 @@
     }
 }
 .design {
+    width: 80%;
+    margin: 0 auto;
     padding: 50px 0px;
     &--heading {
         font-family: 'Book Antiqua';
         font-weight: 400;
         font-size: 48px;
         letter-spacing: 0.02em;
+        margin-bottom: 20px;
     }
     p {
         font-family: 'Raleway';
@@ -84,9 +90,12 @@
     &--images {
         display: grid;
         grid-template-columns: repeat(2, auto);
+        grid-gap: 20px;
     }
 }
 .places {
+    width: 80%;
+    margin: 0 auto;
     padding: 50px 0px 120px;
     &--heading {
         font-family: 'Book Antiqua';
@@ -102,12 +111,40 @@
         margin-bottom: 53px;
         max-width: 539px;
         margin-bottom: 36px;
+        line-height: 160%;
     }
     .button {
         margin-bottom: 48px;
     }
     img {
-        
         display: block;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .design {
+        &--images {
+            grid-template-columns: auto;
+        }
+    }
+}
+@media screen and (max-width: 1120px) {
+    .story {
+        &--heading {
+            text-align: center;
+        }
+        &--story {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            p {
+                margin: 0;
+                margin-top: 40px;
+                width: 70%;
+                // font-weight: 400;
+                // font-size: 16px;
+                // margin-left: 200px;
+            }
+        }
     }
 }
