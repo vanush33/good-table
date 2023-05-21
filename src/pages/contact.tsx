@@ -51,10 +51,12 @@ export const Contact = () => {
         </div>
       </div>
       <div className="container">
-        <div className="gallery">
-          <img src={gallery1} />
-          <img src={gallery2} />
-          <img src={gallery3} />
+        <div className="gallery--container">
+          <div className="gallery">
+            <img src={gallery1} />
+            <img src={gallery2} />
+            <img src={gallery3} />
+          </div>
         </div>
       </div>
     </>

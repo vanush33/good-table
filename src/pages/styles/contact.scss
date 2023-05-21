@@ -63,14 +63,18 @@
         margin-top: 24px;
     }
 }
+.gallery--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 .gallery {
+    align-self: center;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-gap: 30px;
-    // display: flex;
-    // justify-content: space-around;
     padding: 104px 0px;
-    //flex-wrap: wrap;
 }
 @media screen and (max-width: 1320px) {
     .gallery {

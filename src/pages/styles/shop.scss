@@ -62,7 +62,7 @@
 @media screen and (max-width: 1700px) {
     .product {
         &--list {
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(3, auto);
         }
     }
 }
@@ -71,6 +71,11 @@
         flex-direction: column;
         &--category {
             margin-bottom: 40px;
+        }
+    }
+    .product {
+        &--list {
+            grid-template-columns: repeat(2, auto);
         }
     }
 }

@@ -1,8 +1,6 @@
 .product {
     display: grid;
-    grid-template-columns: repeat(2, auto);
     padding: 100px 0px;
-    grid-gap: 20px;
     font-weight: 500;
     font-size: 20px;
     &--image {
@@ -48,7 +46,7 @@
         font-family: 'Roboto';
     }
     input {
-        width: 70px;
+        width: 100px;
         &:focus {
             outline: none;
         }
