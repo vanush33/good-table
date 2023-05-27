@@ -1,12 +1,25 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/confirmPayment.scss'
+import ModalWindow from '../components/ModalWindow'
+
+interface IModalWindowParams {
+    isVisible: boolean
+    setIsVisible: Dispatch<SetStateAction<Boolean>>
+}
 
 export const ConfirmPayment = () => {
     //tracking payment method
     const [isCash, setIsCash] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
+
+    const openModalWindow = (param: boolean) => {
+        setIsVisible(param)
+    }
+
     return (
         <>
+            {isVisible && <ModalWindow toggleVisibility={openModalWindow} />}
             <div className="container">
                 <div className="confirmPayment">
                     <h2 className="heading">Выберите способ оплаты</h2>
@@ -28,7 +41,7 @@ export const ConfirmPayment = () => {
                         </>}
                     <div className="confirmPayment--buttons">
                         <Link to={'/confirmData'}><button className="button button--secondary">Назад</button></Link>
-                        <Link to={'/shop'}><button className="button button--accent">Подтвердить</button></Link>
+                        <button onClick={() => openModalWindow(true)} className="button button--accent">Подтвердить</button>
                     </div>
                 </div>
             </div>

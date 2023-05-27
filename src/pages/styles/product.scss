@@ -62,6 +62,11 @@
         letter-spacing: 0.02em;
     }
 }
+.product-page {
+    display: flex;
+    justify-content: space-around;
+    //width: 90%;
+}
 .amount {
     width: 25px;
     border: none;

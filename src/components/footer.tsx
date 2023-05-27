@@ -4,15 +4,23 @@ import { Link } from 'react-router-dom'
 import '../pages/styles/footer.scss'
 
 export const Footer = () => {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <div className='footer'>
       <div className="container">
         <div className="footer--body">
           <ul className="footer--menu menu">
-            <li className="menu--item"><Link to={'/'} className="menu--link">Главная</Link></li>
-            <li className="menu--item"><Link to={'/shop'} className="menu--link">Товары</Link></li>
-            <li className="menu--item"><Link to={'/about'} className="menu--link">О нас</Link></li>
-            <li className="menu--item"><Link to={'/contact'} className="menu--link">Контакты</Link></li>
+            <li className="menu--item"><Link to={'/'} onClick={scrollToTop} className="menu--link">Главная</Link></li>
+            <li className="menu--item"><Link to={'/shop'} onClick={scrollToTop} className="menu--link">Товары</Link></li>
+            <li className="menu--item"><Link to={'/about'} onClick={scrollToTop} className="menu--link">О нас</Link></li>
+            <li className="menu--item"><Link to={'/contact'} onClick={scrollToTop} className="menu--link">Контакты</Link></li>
           </ul>
           <div className="footer--payment">
             <div className="footer--heading">Принимаем к оплате:</div>
